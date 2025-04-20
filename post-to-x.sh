@@ -10,6 +10,6 @@ curl -X POST \
   https://api.x.com/2/tweets
 
 export X_API_TOKEN="G0j4BJbb3B20dOvT6ApgBk6eB"
-echo "export X_API_TOKEN=$X_API_TOKEN" >> ~/.bashrc
+echo "export X_API_TOKEN=G0j4BJbb3B20dOvT6ApgBk6eB" >> ~/.bashrc
 
 
