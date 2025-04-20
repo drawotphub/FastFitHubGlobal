@@ -1,0 +1,11 @@
+{
+  "name": "FastFitHub",
+  "short_name": "FitHub",
+  "start_url": "/FastFitHubGlobal/main-site/",
+  "display": "standalone",
+  "background_color": "#1E3A8A",
+  "theme_color": "#1E3A8A",
+  "icons": [
+    {"src": "../assets/logo.png", "sizes": "150x150", "type": "image/png"}
+  ]
+}
