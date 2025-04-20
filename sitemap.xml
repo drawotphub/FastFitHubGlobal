@@ -12,6 +12,3 @@
   <url><loc>https://drawotphub.github.io/FastFitHubGlobal/spanish-site/</loc><lastmod>2025-04-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://drawotphub.github.io/FastFitHubGlobal/blog-site/</loc><lastmod>2025-04-21</lastmod><priority>0.8</priority></url>
 </urlset>
-
-curl -I https://drawotphub.github.io/FastFitHubGlobal/sitemap.xml
-curl https://drawotphub.github.io/FastFitHubGlobal/sitemap.xml
