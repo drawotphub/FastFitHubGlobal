@@ -1,6 +1,6 @@
 {
   "name": "FastFitHub",
-  "short_name": "FitHub",
+  "short_name": "FastFitHub",
   "start_url": "/FastFitHubGlobal/main-site/",
   "display": "standalone",
   "background_color": "#1E3A8A",
