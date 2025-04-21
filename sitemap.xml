@@ -12,3 +12,8 @@
   <url><loc>https://drawotphub.github.io/FastFitHubGlobal/spanish-site/</loc><lastmod>2025-04-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://drawotphub.github.io/FastFitHubGlobal/blog-site/</loc><lastmod>2025-04-21</lastmod><priority>0.8</priority></url>
 </urlset>
+
+git add sitemap.xml; git commit -m "Fix sitemap.xml"; git push origin main
+
+
+<url><loc>https://drawotphub.github.io/FastFitHubGlobal/</loc><lastmod>2025-04-21</lastmod></url>.
