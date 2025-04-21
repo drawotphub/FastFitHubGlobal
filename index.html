@@ -3,11 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="KhQnbRl5XtNDJwIfFSmhEEL22q7bRSqpPZjAZ4LflCg" />
-  <title>FastFitHub</title>
+  <title>FastFitHubAi App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
+    .container { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #333; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; }
+    input, select { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    button { background: #4CAF50; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; }
+    button:hover { background: #45a049; }
+    #options, #features, #result { margin-top: 20px; }
+    #result { color: green; }
+  </style>
 </head>
 <body>
-  <h1>FastFitHub - Redirecting...</h1>
-  <script>window.location.href = '/FastFitHubGlobal/main-site/';</script>
+  <div class="container">
+    <h1>FastFitHubAi</h1>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter your age" required>
+    </div>
+    <div class="form-group">
+      <label for="goal">Fitness Goal:</label>
+      <select id="goal" required>
+        <option value="">Select Goal</option>
+        <option value="weightloss">Weight Loss</option>
+        <option value="muscle">Muscle Gain</option>
+        <option value="endurance">Endurance</option>
+      </select>
+    </div>
+    <button onclick="submitForm()">Submit & Post to X</button>
+    <div id="options">
+      <h3>Health Options</h3>
+      <p>AI fitness plans, DNA-based training, Metaverse gym.</p>
+    </div>
+    <div id="features">
+      <h3>Features</h3>
+      <ul>
+        <li>Real-time analytics</li>
+        <li>Premium coaching</li>
+        <li>Personalized workouts</li>
+      </ul>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    async function submitForm() {
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const goal = document.getElementById('goal').value;
+      const result = document.getElementById('result');
+
+      if (!name || !age || !goal) {
+        result.innerHTML = 'Please fill all fields!';
+        return;
+      }
+
+      result.innerHTML = `Processing ${name}...`;
+      try {
+        const response = await fetch('https://bai.onrender.com/tweet', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, age, goal })
+        });
+        const data = await response.json();
+        if (data.success) {
+          result.innerHTML = `Thanks ${name}! Goal (${goal}) saved. Tweet ID: ${data.tweetId}`;
+        } else {
+          result.innerHTML = `Error: ${data.error || 'Unknown issue'}`;
+        }
+      } catch (error) {
+        result.innerHTML = `Network error: ${error.message}. Backend may be down.`;
+      }
+    }
+  </script>
 </body>
 </html>
