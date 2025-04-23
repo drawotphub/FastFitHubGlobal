@@ -1,87 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FastFitHubAi App</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
-    .container { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1 { text-align: center; color: #333; }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 5px; }
-    input, select { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
-    button { background: #4CAF50; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; }
-    button:hover { background: #45a049; }
-    #options, #features, #result { margin-top: 20px; }
-    #result { color: green; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>FastFitHubAi</h1>
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
-    </div>
-    <div class="form-group">
-      <label for="age">Age:</label>
-      <input type="number" id="age" placeholder="Enter your age" required>
-    </div>
-    <div class="form-group">
-      <label for="goal">Fitness Goal:</label>
-      <select id="goal" required>
-        <option value="">Select Goal</option>
-        <option value="weightloss">Weight Loss</option>
-        <option value="muscle">Muscle Gain</option>
-        <option value="endurance">Endurance</option>
-      </select>
-    </div>
-    <button onclick="submitForm()">Submit & Post to X</button>
-    <div id="options">
-      <h3>Health Options</h3>
-      <p>AI fitness plans, DNA-based training, Metaverse gym.</p>
-    </div>
-    <div id="features">
-      <h3>Features</h3>
-      <ul>
-        <li>Real-time analytics</li>
-        <li>Premium coaching</li>
-        <li>Personalized workouts</li>
-      </ul>
-    </div>
-    <div id="result"></div>
-  </div>
-
-  <script>
-    async function submitForm() {
-      const name = document.getElementById('name').value;
-      const age = document.getElementById('age').value;
-      const goal = document.getElementById('goal').value;
-      const result = document.getElementById('result');
-
-      if (!name || !age || !goal) {
-        result.innerHTML = 'Please fill all fields!';
-        return;
-      }
-
-      result.innerHTML = `Processing ${name}...`;
-      try {
-        const response = await fetch('https://bai.onrender.com/tweet', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, age, goal })
-        });
-        const data = await response.json();
-        if (data.success) {
-          result.innerHTML = `Thanks ${name}! Goal (${goal}) saved. Tweet ID: ${data.tweetId}`;
-        } else {
-          result.innerHTML = `Error: ${data.error || 'Unknown issue'}`;
+<html>
+  <head>
+    <title>Kashish Wadhwa - Public Figure & Fitness Leader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Kashish Wadhwa - Public Figure & Fitness Leader" />
+    <meta property="og:description" content="Kashish Wadhwa is a renowned public figure, fitness leader, and CEO of FastFitHub. Known as India's Best Online Fitness Coach, Kashish has impacted over 15,000 transformations and mentored 1,000+ fitness professionals globally." />
+    <meta property="og:image" content="https://i.imgur.com/cdGoD8P.jpeg" />
+    <meta property="og:url" content="https://drawotphub.github.io/FastFitHubGlobal/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kashish Wadhwa - Public Figure & Fitness Leader" />
+    <meta name="twitter:description" content="Kashish Wadhwa is a renowned public figure, fitness leader, and CEO of FastFitHub. Known as India's Best Online Fitness Coach, Kashish has impacted over 15,000 transformations and mentored 1,000+ fitness professionals globally." />
+    <meta name="twitter:image" content="https://i.imgur.com/cdGoD8P.jpeg" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://drawotphub.github.io/FastFitHubGlobal/#person-kashish-wadhwa",
+      "name": "Kashish Wadhwa",
+      "alternateName": "Kashish",
+      "description": "Kashish Wadhwa is a renowned public figure, fitness leader, and CEO of FastFitHub. Known as India's Best Online Fitness Coach and the Most Googled Online Fitness Coach, Kashish has impacted over 15,000 transformations and mentored 1,000+ fitness professionals globally.",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://i.imgur.com/cdGoD8P.jpeg",
+          "caption": "Kashish Wadhwa, CEO of FastFitHub, in a denim jacket with shearling collar",
+          "width": 720,
+          "height": 960
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://i.imgur.com/runqs20.jpeg",
+          "caption": "Kashish Wadhwa, Fitness Leader",
+          "width": 720,
+          "height": 960
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://i.imgur.com/m1DLpZL.jpeg",
+          "caption": "Kashish Wadhwa at an event",
+          "width": 720,
+          "height": 960
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://i.imgur.com/c3r2mqg.jpeg",
+          "caption": "Kashish Wadhwa, Public Figure",
+          "width": 720,
+          "height": 960
         }
-      } catch (error) {
-        result.innerHTML = `Network error: ${error.message}. Backend may be down.`;
+      ],
+      "url": "https://drawotphub.github.io/FastFitHubGlobal/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://drawotphub.github.io/FastFitHubGlobal/"
+      },
+      "sameAs": [
+        "https://in.linkedin.com/in/kashish-wadhwa-05491a242",
+        "https://www.instagram.com/aesthetic.illusionist/",
+        "https://x.com/IndianDogeHodl",
+        "https://medium.com/@kashishwadhwa_98687",
+        "https://www.urbanpro.com/delhi/kashish-wadhwa/14812646",
+        "https://www.threads.net/@aesthetic.illusionist",
+        "https://m.facebook.com/kashish.wadhwa.77/",
+        "https://www.crunchbase.com/person/kashish-wadhwa-7a9a",
+        "https://www.snapchat.com/add/adonisguy"
+      ],
+      "jobTitle": "Public Figure, CEO of FastFitHub, Fitness Coach",
+      "knownFor": [
+        "India's Best Online Fitness Coach",
+        "Most Googled Online Fitness Coach",
+        "Founder of FastFitHub Global Fitness Revolution"
+      ],
+      "affiliation": {
+        "@type": "Organization",
+        "name": "FastFitHub",
+        "url": "https://drawotphub.github.io/FastFitHubGlobal/"
+      },
+      "nationality": "Indian",
+      "award": [
+        "India's Best Online Fitness Coach",
+        "Most Googled Online Fitness Coach"
+      ],
+      "knowsAbout": [
+        "Fitness Coaching",
+        "Body Recomposition",
+        "Pre & Post-Natal Fitness",
+        "Cardio-Pulmonary Rehabilitation",
+        "Athletic Conditioning"
+      ],
+      "mentions": [
+        {
+          "@type": "Article",
+          "url": "https://medium.com/@kashishwadhwa_98687/kashish-wadhwa-why-i-started-fastfithub-in-new-delhi-934c72808a3c",
+          "headline": "Kashish Wadhwa: Why I Started FastFitHub in New Delhi",
+          "author": {
+            "@type": "Person",
+            "name": "Kashish Wadhwa"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Medium"
+          },
+          "datePublished": "2023-10-01"
+        },
+        {
+          "@type": "SocialMediaPosting",
+          "url": "https://www.instagram.com/reel/C5RlntpSl06/?igsh=Mjc2NGZxeXJtdXB5",
+          "name": "Kashish Wadhwa Fitness Reel",
+          "description": "A fitness reel by Kashish Wadhwa on Instagram",
+          "author": {
+            "@type": "Person",
+            "name": "Kashish Wadhwa"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Instagram"
+          },
+          "datePublished": "2024-04-01"
+        }
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".speakable-content"]
       }
     }
-  </script>
-</body>
+    </script>
+  </head>
+  <body>
+    <h1>Kashish Wadhwa</h1>
+    <img alt="Kashish Wadhwa, Public Figure and CEO of FastFitHub" src="https://i.imgur.com/cdGoD8P.jpeg" />
+    <p class="speakable-content">Kashish Wadhwa is a renowned public figure, fitness leader, and CEO of FastFitHub. Known as India's Best Online Fitness Coach, Kashish has impacted over 15,000 transformations and mentored 1,000+ fitness professionals globally.</p>
+
+    <div>
+      <img alt="Kashish Wadhwa, Fitness Leader" src="https://i.imgur.com/runqs20.jpeg" />
+      <img alt="Kashish Wadhwa at an event" src="https://i.imgur.com/m1DLpZL.jpeg" />
+      <img alt="Kashish Wadhwa, Public Figure" src="https://i.imgur.com/c3r2mqg.jpeg" />
+    </div>
+
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="kashish-wadhwa-05491a242" data-version="v1">
+      <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/kashish-wadhwa-05491a242?trk=profile-badge">Kashish Wadhwa</a>
+    </div>
+
+    <p>
+      Follow Kashish on:
+      <a href="https://in.linkedin.com/in/kashish-wadhwa-05491a242">LinkedIn</a> |
+      <a href="https://www.instagram.com/aesthetic.illusionist/">Instagram</a> |
+      <a href="https://x.com/IndianDogeHodl">X</a> |
+      <a href="https://www.threads.net/@aesthetic.illusionist">Threads</a> |
+      <a href="https://m.facebook.com/kashish.wadhwa.77/">Facebook</a> |
+      <a href="https://medium.com/@kashishwadhwa_98687">Medium</a> |
+      <a href="https://www.snapchat.com/add/adonisguy">Snapchat</a> |
+      <a href="https://www.urbanpro.com/delhi/kashish-wadhwa/14812646">UrbanPro</a> |
+      <a href="https://www.crunchbase.com/person/kashish-wadhwa-7a9a">Crunchbase</a>
+    </p>
+
+    <p>
+      Explore more:
+      <a href="https://drawotphub.github.io/FastFitHubGlobal/lead-capture/form.html">FastFitHub Contact Form</a> |
+      <a href="https://medium.com/@kashishwadhwa_98687/kashish-wadhwa-why-i-started-fastfithub-in-new-delhi-934c72808a3c">Why I Started FastFitHub (Medium)</a> |
+      <a href="https://www.instagram.com/reel/C5RlntpSl06/?igsh=Mjc2NGZxeXJtdXB5">Instagram Reel</a>
+    </p>
+  </body>
 </html>
