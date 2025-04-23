@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: https://drawotphub.github.io/FastFitHubGlobal/sitemap.xml
+User-agent: * Allow: / Sitemap: https://drawotphub.github.io/FastFitHubGlobal/sitemap.xml
