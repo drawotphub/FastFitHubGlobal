@@ -7,16 +7,14 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f0f0; }
     .container { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h3 { text-align: center; color: #333; }
+    h1 { text-align: center; color: #333; }
     .form-group { margin-bottom: 15px; }
     label { display: block; margin-bottom: 5px; }
-    input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    input, select { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
     button { background: #4CAF50; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; }
     button:hover { background: #45a049; }
-    #options, #features, #chatbot, #video, #result { margin-top: 20px; }
+    #options, #features, #result { margin-top: 20px; }
     #result { color: green; }
-    #chatbot textarea { height: 100px; }
-    #chatbot button { width: auto; }
   </style>
 </head>
 <body>
@@ -41,8 +39,8 @@
     </div>
     <button onclick="submitForm()">Submit & Post to X</button>
     <div id="options">
-      <h3>Health Tips</h3>
-      <p>1. Drink 2L water daily.<br>2. Sleep 7-8 hours.<br>3. Try HIIT for quick results.</p>
+      <h3>Health Options</h3>
+      <p>AI fitness plans, DNA-based training, Metaverse gym.</p>
     </div>
     <div id="features">
       <h3>Features</h3>
@@ -51,17 +49,6 @@
         <li>Premium coaching</li>
         <li>Personalized workouts</li>
       </ul>
-    </div>
-    <div id="video">
-      <h3>Learn More</h3>
-      <p>Watch our intro video:</p>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div id="chatbot">
-      <h3>Chat with Us</h3>
-      <textarea id="chatInput" placeholder="Ask about fitness..."></textarea>
-      <button onclick="sendChat()">Send</button>
-      <div id="chatResponse"></div>
     </div>
     <div id="result"></div>
   </div>
@@ -94,23 +81,6 @@
       } catch (error) {
         result.innerHTML = `Network error: ${error.message}. Backend may be down.`;
       }
-    }
-
-    function sendChat() {
-      const input = document.getElementById('chatInput').value;
-      const response = document.getElementById('chatResponse');
-      if (!input) {
-        response.innerHTML = 'Please type a message!';
-        return;
-      }
-      response.innerHTML = 'Bot: Thinking...';
-      setTimeout(() => {
-        if (input.toLowerCase().includes('fitness')) {
-          response.innerHTML = 'Bot: Try our AI-powered fitness plans! Set your goal above.';
-        } else {
-          response.innerHTML = 'Bot: I can help with fitness questions. Ask away!';
-        }
-      }, 1000);
     }
   </script>
 </body>
